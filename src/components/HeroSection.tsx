@@ -43,7 +43,7 @@ const HeroSection = () => (
               Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="text-base border-hero-foreground/20 text-hero-foreground hover:bg-hero-foreground/10">
+          <Button asChild variant="outline" size="lg" className="text-base border-primary/50 text-primary hover:bg-primary/10 hover:text-primary">
             <a href="#services">View Services</a>
           </Button>
         </div>
