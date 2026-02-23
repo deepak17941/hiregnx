@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 30% 12%;
 
-    --primary: 175 70% 40%;
+    --primary: 207 80% 52%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 215 30% 16%;
@@ -24,7 +24,7 @@
     --muted: 210 20% 94%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 175 70% 40%;
+    --accent: 197 85% 55%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
@@ -32,13 +32,13 @@
 
     --border: 214 20% 90%;
     --input: 214 20% 90%;
-    --ring: 175 70% 40%;
+    --ring: 207 80% 52%;
 
     --radius: 0.75rem;
 
     --hero-bg: 215 35% 10%;
     --hero-foreground: 210 40% 98%;
-    --hero-accent: 175 70% 50%;
+    --hero-accent: 197 85% 55%;
 
     --stat-bg: 215 35% 10%;
     --stat-foreground: 210 40% 98%;
@@ -62,19 +62,19 @@
     --card-foreground: 210 40% 98%;
     --popover: 215 30% 12%;
     --popover-foreground: 210 40% 98%;
-    --primary: 175 70% 45%;
+    --primary: 207 80% 52%;
     --primary-foreground: 215 35% 8%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 175 70% 45%;
+    --accent: 197 85% 55%;
     --accent-foreground: 215 35% 8%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 175 70% 45%;
+    --ring: 207 80% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,7 +100,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(190,80%,55%)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(197,85%,55%)];
   }
   .bg-hero {
     background-color: hsl(var(--hero-bg));
