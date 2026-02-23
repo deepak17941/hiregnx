@@ -86,9 +86,9 @@ const ContactSection = () => {
             className="lg:col-span-2 space-y-8"
           >
             {[
-              { icon: Mail, label: "Email", value: "hello@hiregnx.com" },
+              { icon: Mail, label: "Email", value: "hiregnx@gmail.com" },
               { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-              { icon: MapPin, label: "Location", value: "San Francisco, CA" },
+              { icon: MapPin, label: "Location", value: "971 US Highway 202N, Ste N, Branchburg, NJ 08876" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
