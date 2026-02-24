@@ -10,14 +10,41 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast({ title: "Please fill in all fields", variant: "destructive" });
       return;
     }
-    toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-    setForm({ name: "", email: "", message: "" });
+
+    setLoading(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `New Contact Form Submission from ${form.name}`,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Network error", description: "Please check your connection and try again.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -73,8 +100,8 @@ const ContactSection = () => {
               className="bg-card resize-none"
               maxLength={2000}
             />
-            <Button type="submit" size="lg" className="w-full sm:w-auto text-base font-semibold">
-              Send Message <Send className="ml-2 h-4 w-4" />
+            <Button type="submit" size="lg" className="w-full sm:w-auto text-base font-semibold" disabled={loading}>
+              {loading ? "Sending..." : "Send Message"} {!loading && <Send className="ml-2 h-4 w-4" />}
             </Button>
           </motion.form>
 
