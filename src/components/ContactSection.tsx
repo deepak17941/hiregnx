@@ -25,7 +25,7 @@ const ContactSection = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? "",
+          access_key: "5b1b6700-d1e3-404f-a38c-d083ad12d735",
           name: form.name,
           email: form.email,
           message: form.message,
